@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Farsi Fonts</title>
+  <link rel="stylesheet" href="../css/fonts.css">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-brand">
+        <img src="../icons/icon-32.png" alt="Claude Farsi Logo" class="brand-logo">
+        <div class="brand-text">
+          <h1 id="txt-title" class="title">فونت و راست‌چین کلود</h1>
+          <span class="subtitle">Claude.ai Farsi Typography</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="btn-lang-toggle" class="btn-icon" title="تغییر زبان / Switch Language">EN</button>
+        <label class="switch" title="فعال / غیرفعال">
+          <input type="checkbox" id="toggle-enabled" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content" id="main-controls">
+      <!-- Font Family Section -->
+      <section class="section">
+        <label for="select-font" id="lbl-font" class="section-label">انتخاب قلم (Font):</label>
+        <select id="select-font" class="select-input">
+          <option value="Vazirmatn">وزیرمتن (Vazirmatn) - پیش‌فرض</option>
+          <option value="Estedad">استعداد (Estedad) - مدرن و چشم‌نواز</option>
+          <option value="Shabnam">شبنم (Shabnam) - نرم و دلنشین</option>
+          <option value="Sahel">ساحل (Sahel) - ساده و خوانا</option>
+          <option value="custom">فونت سفارشی دیگر (Custom Font)...</option>
+          <option value="default">پیش‌فرض سایت کلود (Default)</option>
+        </select>
+
+        <div id="custom-font-container" class="custom-font-box hidden">
+          <label for="input-custom-font" id="lbl-custom-font" class="sub-label">نام فونت سیستم:</label>
+          <input type="text" id="input-custom-font" class="text-input" placeholder="مثال: IRANSans, Dana, Shabnam">
+        </div>
+      </section>
+
+      <!-- Typography Tuning (Size, Line Height, Weight) -->
+      <section class="section">
+        <div class="slider-row">
+          <div class="slider-header">
+            <span id="lbl-size" class="slider-label">اندازه متن:</span>
+            <span id="val-size" class="slider-val">16px</span>
+          </div>
+          <input type="range" id="range-size" min="13" max="22" step="1" value="16" class="range-slider">
+        </div>
+
+        <div class="slider-row">
+          <div class="slider-header">
+            <span id="lbl-height" class="slider-label">فاصله بین خطوط (Line-height):</span>
+            <span id="val-height" class="slider-val">1.8</span>
+          </div>
+          <input type="range" id="range-height" min="1.4" max="2.4" step="0.05" value="1.8" class="range-slider">
+        </div>
+
+        <div class="weight-row">
+          <span id="lbl-weight" class="sub-label">ضخامت متن:</span>
+          <div class="weight-pills">
+            <button type="button" class="pill-btn" data-weight="300">نازک</button>
+            <button type="button" class="pill-btn active" data-weight="400">عادی</button>
+            <button type="button" class="pill-btn" data-weight="500">متوسط</button>
+            <button type="button" class="pill-btn" data-weight="600">نیمه‌ضخیم</button>
+            <button type="button" class="pill-btn" data-weight="700">ضخیم</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- RTL & Extra Features -->
+      <section class="section options-section">
+        <label class="checkbox-label">
+          <input type="checkbox" id="check-auto-rtl" checked>
+          <span class="custom-checkbox"></span>
+          <span id="txt-auto-rtl" class="checkbox-text">تشخیص هوشمند راست‌چین (Smart RTL)</span>
+        </label>
+
+        <label class="checkbox-label">
+          <input type="checkbox" id="check-input-rtl" checked>
+          <span class="custom-checkbox"></span>
+          <span id="txt-input-rtl" class="checkbox-text">راست‌چین خودکار کادر ورودی پیام</span>
+        </label>
+
+        <label class="checkbox-label">
+          <input type="checkbox" id="check-apply-ui" checked>
+          <span class="custom-checkbox"></span>
+          <span id="txt-apply-ui" class="checkbox-text">اعمال فونت به کل ظاهر صفحه (سایدبار و منوها)</span>
+        </label>
+
+        <label class="checkbox-label">
+          <input type="checkbox" id="check-persian-digits">
+          <span class="custom-checkbox"></span>
+          <span id="txt-persian-digits" class="checkbox-text">نمایش ارقام به صورت فارسی (۰۱۲۳۴۵۶۷۸۹)</span>
+        </label>
+      </section>
+
+      <!-- Live Preview Card -->
+      <section class="section preview-section">
+        <span id="lbl-preview" class="section-label">پیش‌نمایش زنده:</span>
+        <div id="preview-box" class="preview-card">
+          <p class="preview-farsi">هوش مصنوعی کلود با فونت زیبای فارسی و نگارش راست‌چین.</p>
+          <p class="preview-latin">Claude AI with crisp and modern Persian typography.</p>
+          <div class="preview-code">
+            <code>def test_code(): return "Code stays monospace & LTR"</code>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <button id="btn-reset" class="btn-text" type="button">بازنشانی به حالت اولیه</button>
+      <span class="footer-tag">نسخه ۱.۰.۰ | سازگار با کروم و اج</span>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
