@@ -1,0 +1,23 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node / Dependencies
+node_modules/
+package-lock.json
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Packaging / Zip archives
+*.crx
+*.zip
+dist/
+build/
