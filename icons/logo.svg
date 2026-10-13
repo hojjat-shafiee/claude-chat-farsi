@@ -1,0 +1,40 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FF7844" />
+      <stop offset="45%" stop-color="#D97706" />
+      <stop offset="100%" stop-color="#9A3412" />
+    </linearGradient>
+    <!-- Radial Highlight -->
+    <radialGradient id="highlight" cx="25%" cy="20%" r="60%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+    </radialGradient>
+    <!-- Drop Shadow Filter -->
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000000" flood-opacity="0.32" />
+    </filter>
+  </defs>
+
+  <!-- Squircle Base Tile -->
+  <rect x="20" y="20" width="472" height="472" rx="110" fill="url(#bgGrad)" filter="url(#shadow)" stroke="rgba(255,255,255,0.28)" stroke-width="3.5" />
+  <rect x="20" y="20" width="472" height="472" rx="110" fill="url(#highlight)" />
+
+  <!-- AI Sparkle Star (Claude Accent) -->
+  <g transform="translate(355, 60) scale(0.68)">
+    <path d="M50 0C50 27.6 27.6 50 0 50C27.6 50 50 72.4 50 100C50 72.4 72.4 50 100 50C72.4 50 50 27.6 50 0Z" fill="#FFFBEB" filter="drop-shadow(0px 6px 12px rgba(0,0,0,0.3))" />
+    <circle cx="50" cy="50" r="14" fill="#FDE047" opacity="0.9" />
+  </g>
+  <g transform="translate(415, 128) scale(0.32)">
+    <path d="M50 0C50 27.6 27.6 50 0 50C27.6 50 50 72.4 50 100C50 72.4 72.4 50 100 50C72.4 50 50 27.6 50 0Z" fill="#FEF08A" opacity="0.85" />
+  </g>
+
+  <!-- Persian Glyph Fa (ف) -->
+  <g fill="#FFFFFF" filter="drop-shadow(0px 10px 24px rgba(0,0,0,0.28))">
+    <!-- Dot of Fa -->
+    <polygon points="314,136 342,108 314,80 286,108" />
+    <!-- Body of Fa -->
+    <path d="M362 254C362 216 338 186 298 186C254 186 226 218 226 260C226 298 250 326 288 326C306 326 324 318 334 306L334 318C334 336 318 350 290 350L178 350C150 350 138 334 142 308L148 274L114 274L104 318C96 358 122 388 174 388L294 388C344 388 372 358 372 312L372 264C368 260 364 256 362 254ZM296 290C274 290 262 276 262 256C262 234 274 220 296 220C318 220 330 234 330 256C330 276 318 290 296 290Z" />
+  </g>
+</svg>
