@@ -23,7 +23,8 @@
     "storage"
   ],
   "host_permissions": [
-    "https://claude.ai/*"
+    "https://claude.ai/*",
+    "https://*.claude.ai/*"
   ],
   "background": {
     "service_worker": "background.js"
@@ -31,7 +32,8 @@
   "content_scripts": [
     {
       "matches": [
-        "https://claude.ai/*"
+        "https://claude.ai/*",
+        "https://*.claude.ai/*"
       ],
       "css": [
         "css/fonts.css"
@@ -49,7 +51,8 @@
         "css/*"
       ],
       "matches": [
-        "https://claude.ai/*"
+        "https://claude.ai/*",
+        "https://*.claude.ai/*"
       ]
     }
   ]
