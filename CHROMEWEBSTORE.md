@@ -47,18 +47,19 @@ English
 
 | Asset | Dimensions | Status | Filename |
 |-------|-----------|--------|----------|
-| Store Icon [REQUIRED] | 128×128 PNG | ✅ Ready | `icons/icon-128.png` |
-| Screenshot 1 [REQUIRED] | 1280×800 | ⬜ Not created | `screenshots/screenshot-1.png` |
-| Screenshot 2 [RECOMMENDED] | 1280×800 | ⬜ Not created | `screenshots/screenshot-2.png` |
-| Small Promo Tile [RECOMMENDED] | 440×280 | ⬜ Not created | `promo-440x280.png` |
-| Marquee Promo Tile | 1400×560 | ⬜ Not created | `promo-1400x560.png` |
+| Store Icon [REQUIRED] | 128×128 PNG | ✅ Ready | `store-assets/icon-128.png` |
+| Screenshot 1 [REQUIRED] | 1280×800 PNG | ✅ Ready | `store-assets/screenshot-1-overview.png` |
+| Screenshot 2 [RECOMMENDED] | 1280×800 PNG | ✅ Ready | `store-assets/screenshot-2-popup.png` |
+| Small Promo Tile [RECOMMENDED] | 440×280 PNG | ✅ Ready | `store-assets/promo-small-440x280.png` |
+| Marquee Promo Tile | 1400×560 PNG | ✅ Ready | `store-assets/promo-marquee-1400x560.png` |
+| Upload Package [REQUIRED] | ZIP (<2GB) | ✅ Ready | `dist/claude-farsi-fonts-v1.0.0.zip` |
 
 ## Permissions Justification
 
 | Permission | Type | Justification |
 |------------|------|---------------|
 | `storage` | permissions | Saves user typography preferences (font choice, font size, line height, RTL switches) across browser sessions. |
-| `https://claude.ai/*` | host_permissions | Applies custom fonts and right-to-left layout adjustments directly to the chat interface on claude.ai. |
+| `https://claude.ai/*`, `https://*.claude.ai/*` | host_permissions | Applies custom open fonts and right-to-left layout adjustments directly to the chat interface on claude.ai. |
 
 ## Privacy & Data Use
 
