@@ -1,56 +1,79 @@
-# افزونه فونت فارسی و راست‌چین برای چت‌بات کلود (Claude AI)
-### Claude Farsi Fonts & RTL (Vazirmatn & Estedad)
+<div align="center">
 
-افزونه‌ای متن‌باز و سازگار با **Google Chrome** و **Microsoft Edge** (نسخه Manifest V3) جهت ارتقای تجربه کاربری زبان فارسی در سایت [Claude.ai](https://claude.ai) با استفاده از فونت‌های متن‌باز و استاندارد فارسی نظیر **وزیرمتن (Vazirmatn)** و **استعداد (Estedad)**.
+# فونت فارسی و راست‌چین برای کلود
+### Farsi Fonts & RTL for Claude (Vazirmatn & Estedad)
+
+![Version](https://img.shields.io/badge/version-1.0.0-amber.svg)
+![Manifest](https://img.shields.io/badge/manifest-v3-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+![Browsers](https://img.shields.io/badge/browsers-Chrome%20%7C%20Edge%20%7C%20Brave-orange.svg)
+
+افزونه‌ای مدرن و متن‌باز بر پایه **Manifest V3** جهت بهبود تجربه کاربری و تایپوگرافی زبان فارسی در وب‌سایت [Claude.ai](https://claude.ai) با قلم‌های اصیل و استاندارد **وزیرمتن**، **استعداد**، **شبنم** و **ساحل**.
+
+<br />
+
+<img src="store-assets/promo-marquee-1400x560.png" alt="Farsi Fonts for Claude" width="800" style="border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.1);" />
+
+</div>
 
 ---
 
-## ✨ قابلیت‌های اصلی (Features)
+## ✨ قابلیت‌های کلیدی (Key Features)
 
-1. **فونت‌های متن‌باز تعبیه‌شده (Embedded Open Fonts)**:
-   - **وزیرمتن (Vazirmatn)**: اثر ماندگار زنده‌یاد صابر راستی‌کردار (پرفروش‌ترین و محبوب‌ترین قلم وب فارسی)
-   - **استعداد (Estedad)**: اثر استاد امین عابدی (مدرن، خوانا و هندسی)
-   - **شبنم (Shabnam)**: گرد، خوانا و چشم‌نواز
-   - **ساحل (Sahel)**: ساده، متوازن و کلاسیک
-   - **فونت سفارشی (Custom Font)**: قابلیت تعریف نام هر فونت نصب‌شده روی سیستم شما (مانند ایران‌سنس، دانا، کلمه، پیدا و...)
-2. **تشخیص هوشمند راست‌چین (Smart RTL)**:
-   - پاراگراف‌ها و پاسخ‌های فارسی به صورت خودکار راست‌چین (`RTL`) و مرتب می‌شوند.
-   - پاسخ‌ها و جملات انگلیسی همچنان چپ‌چین (`LTR`) باقی می‌مانند.
-3. **راست‌چین خودکار کادر پیام (Input RTL)**:
-   - هنگام تایپ متن فارسی در کادر چت، جهت متن بلافاصله به راست‌چین تغییر می‌یابد تا نشانگر و نشانه‌گذاری‌ها به هم نریزند.
-4. **محافظت کامل از کدهای برنامه‌نویسی (Code Block Protection)**:
-   - بلوک‌های کد (`pre`, `code`, `.font-mono`) و فرمول‌های ریاضی (`KaTeX`) همیشه چپ‌چین و با فونت‌های استاندارد Monospace حفظ می‌شوند تا خوانایی کد مخدوش نشود.
-5. **تنظیمات دقیق تایپوگرافی (Typography Tuning)**:
-   - کنترل اندازه قلم (Font Size) از ۱۳ تا ۲۲ پیکسل
-   - کنترل فاصله خطوط (Line-height) متناسب با ساختار حروف فارسی
-   - انتخاب ضخامت قلم (Font Weight) از نازک تا ضخیم
-   - سوییچ ارقام فارسی (نمایش اعداد ۰ تا ۹)
-6. **پیش‌نمایش زنده در منوی تنظیمات (Live Preview Popup)**:
-   - با تغییر هر گزینه، پیش‌نمایش آنی را مشاهده کنید؛ همچنین تغییرات فوراً و بدون نیاز به رفرش در برگه کلود اعمال می‌شوند.
-7. **دو زبانه بودن رابط تنظیمات (Bilingual UI)**:
-   - پشتیبانی از زبان فارسی (FA) و انگلیسی (EN).
+- 🔤 **فونت‌های متن‌باز تعبیه‌شده (Embedded Fonts)**:
+  - **وزیرمتن (Vazirmatn)**: اثر ماندگار صابر راستی‌کردار (قلم پیش‌فرض و استاندارد وب فارسی)
+  - **استعداد (Estedad)**: اثر امین عابدی (مدرن، خوانا و چشم‌نواز)
+  - **شبنم (Shabnam)**: نرم، دلنشین و خوانا
+  - **ساحل (Sahel)**: کلاسیک، متوازن و ساده
+  - **فونت سفارشی (Custom Font)**: امکان فراخوانی هر فونت نصب‌شده در سیستم‌عامل (ایران‌سنس، دانا، کلمه و...)
+- ⚡ **راست‌چین هوشمند و زنده در استریم (Live Streaming RTL)**:
+  - تشخیص آنی جهت متن هنگام تایپ استریم پاسخ‌های هوش مصنوعی کلود بدون پرش صفحه.
+  - پشتیبانی هم‌زمان از پیام‌های ارسالی کاربر و پاسخ‌های هوش مصنوعی.
+- 🎯 **پرهیز از تداخل متن دوزبانه**:
+  - بررسی هوشمند تراکم کلمات؛ متون و اصطلاحات انگلیسی به همراه کلمات منفرد فارسی معکوس نمی‌شوند و چپ‌چین می‌مانند.
+- ✍️ **راست‌چین خودکار کادر ورودی (Smart Prompt Input)**:
+  - با شروع تایپ فارسی، کادر ورودی کلود به‌صورت خودکار راست‌چین شده و با پاک شدن متن به حالت طبیعی برمی‌گردد.
+- 🛡️ **حفظ ساختار کدها و فرمول‌های ریاضی (Code & KaTeX Preservation)**:
+  - بلوک‌های کد (`pre`, `code`, `.font-mono`) و فرمول‌های LaTeX ریاضی (`KaTeX`) دست‌نخورده، چپ‌چین و با فونت اختصاصی باقی می‌مانند.
+- ⚙️ **شخصی‌سازی پیشرفته تایپوگرافی**:
+  - تغییر اندازه متن (۱۳ تا ۲۲ پیکسل)، فاصله خطوط (Line-height)، ضخامت قلم (Light تا Bold) و سوییچ ارقام فارسی (۰ تا ۹).
+- 🔄 **پیش‌نمایش زنده و رابط دوزبانه (Bilingual & Live Preview)**:
+  - پنل تنظیمات با زبان‌های فارسی و انگلیسی و پیش‌نمایش آنی بدون نیاز به رفرش برگه.
+
+---
+
+## 📸 تصاویر محیط کاربری (Screenshots)
+
+<div align="center">
+  <img src="store-assets/screenshot-1-overview.png" alt="Claude Chat Overview" width="48%" style="border-radius: 8px;" />
+  <img src="store-assets/screenshot-2-popup.png" alt="Extension Settings Popup" width="48%" style="border-radius: 8px;" />
+</div>
 
 ---
 
 ## 🚀 راهنمای نصب در مرورگرها (Installation Guide)
 
-این افزونه بر پایه استاندارد **Manifest V3** توسعه داده شده است و روی تمام مرورگرهای مبتنی بر Chromium نصب می‌شود:
+### روش اول: نصب پوشه بازشده (Developer Mode)
 
-### ۱. نصب در گوگل کروم (Google Chrome)
-1. مرورگر گوگل کروم را باز کنید.
-2. به آدرس `chrome://extensions` بروید.
-3. در گوشه بالا سمت راست، گزینه **Developer mode (حالت توسعه‌دهنده)** را فعال کنید.
-4. روی دکمه **Load unpacked (بارگیری بازنشده)** در بالای صفحه کلیک کنید.
-5. پوشه همین پروژه (`c:\Users\Parallel\Documents\claude-chat-farsi`) را انتخاب کنید.
-6. افزونه نصب شد! اکنون وارد [claude.ai](https://claude.ai) شوید.
+1. مخزن را دانلود یا کلون کنید:
+   ```bash
+   git clone https://github.com/hojjat-shafiee/claude-chat-farsi.git
+   ```
+2. مرورگر خود (Chrome، Edge، Brave یا Opera) را باز کنید و وارد آدرس مدیریت افزونه‌ها شوید:
+   - کروم: `chrome://extensions`
+   - مایکروسافت اج: `edge://extensions`
+3. گزینه **Developer mode (حالت توسعه‌دهنده)** را در بالای صفحه فعال کنید.
+4. روی دکمه **Load unpacked (بارگیری بازنشده)** کلیک کنید.
+5. پوشه پروژه را انتخاب کنید.
+6. وارد [claude.ai](https://claude.ai) شوید.
 
-### ۲. نصب در مایکروسافت اج (Microsoft Edge)
-1. مرورگر مایکروسافت اج را باز کنید.
-2. به آدرس `edge://extensions` بروید.
-3. در منوی سمت چپ، گزینه **Developer mode (حالت برنامه‌نویس)** را فعال کنید.
-4. روی دکمه **Load unpacked (بارگذاری بدون بسته‌بندی)** کلیک کنید.
-5. پوشه پروژه را انتخاب نمایید.
-6. وارد [claude.ai](https://claude.ai) شوید و از فونت‌های فارسی لذت ببرید.
+### روش دوم: ساخت پکیج فشرده (Production ZIP)
+
+برای ساخت فایل ZIP آماده بارگذاری در فروشگاه افزونه‌ها:
+```bash
+python package_extension.py
+```
+فایل نهایی در مسیر `dist/claude-farsi-fonts-v1.0.0.zip` ایجاد می‌شود.
 
 ---
 
@@ -59,38 +82,34 @@
 ```
 claude-chat-farsi/
 ├── manifest.json              # مانیفست افزونه (Manifest V3)
-├── background.js              # Service Worker پیش‌زمینه
-├── content.js                 # اسکریپت اعمال فونت و راست‌چین در claude.ai
+├── background.js              # Service Worker پیش‌زمینه و مدیریت وضعیت
+├── content.js                 # اسکریپت اصلی اعمال فونت و رصدگر استریم DOM
 ├── css/
-│   └── fonts.css              # تعریف @font-face برای فونت‌های محلی
-├── fonts/                     # فایل‌های وب‌فونت WOFF2
-│   ├── Vazirmatn-Variable.woff2
-│   ├── Vazirmatn-Regular.woff2
-│   ├── Vazirmatn-Bold.woff2
-│   ├── Estedad-Arabic-Variable.woff2
-│   ├── Estedad-Latin-Variable.woff2
-│   ├── Estedad-Arabic-Regular.woff2
-│   ├── Estedad-Arabic-Bold.woff2
-│   ├── Shabnam.woff2
-│   ├── Sahel.woff2
-│   └── ...
-├── icons/                     # آیکون‌های استاندارد در ابعاد ۱۶، ۳۲، ۴۸ و ۱۲۸
-│   ├── icon-16.png
-│   ├── icon-32.png
-│   ├── icon-48.png
-│   └── icon-128.png
-├── popup/                     # واسط کاربری منوی پاپ‌آپ
+│   └── fonts.css              # تعریف @font-face برای وب‌سایت کلود
+├── fonts/                     # فایل‌های فونت WOFF2 (Vazirmatn, Estedad, Shabnam, Sahel)
+├── icons/                     # آیکون‌های استاندارد در ابعاد ۱۶، ۳۲، ۴۸، ۱۲۸ و ۵۱۲
+├── popup/                     # واسط کاربری و اسکریپت منوی پاپ‌آپ
 │   ├── popup.html
 │   ├── popup.css
 │   └── popup.js
-├── CHROMEWEBSTORE.md          # مشخصات انتشار در کروم وب استور
-└── README.md                  # راهنمای پروژه
+├── store-assets/              # بنرها و اسکرین‌شات‌های معرفی افزونه
+├── package_extension.py       # اسکریپت بسته‌بندی فایل برای استور
+├── PRIVACY_POLICY.md          # سیاست حفظ حریم خصوصی
+└── README.md                  # مستندات و راهنمای پروژه
 ```
 
 ---
 
-## 📜 مجوزها و فونت‌ها (Licenses & Credits)
+## 🔒 حریم خصوصی و امنیت (Privacy)
 
-- **Vazirmatn, Shabnam, Sahel**: توسعه‌یافته توسط زنده‌یاد **صابر راستی‌کردار** تحت مجوز آزاد [SIL Open Font License 1.1](https://scripts.sil.org/OFL).
-- **Estedad**: توسعه‌یافته توسط **امین عابدی** تحت مجوز آزاد [SIL Open Font License 1.1](https://scripts.sil.org/OFL).
-- کد افزونه تحت مجوز **MIT** منتشر شده است.
+- این افزونه به صورت **۱۰۰٪ محلی (Local-only)** کار می‌کند.
+- هیچ‌گونه داده، پیام چت، کوکی یا تلمتری از دستگاه شما ذخیره یا به سرور ثالثی ارسال نمی‌شود.
+- تمامی فونت‌ها درون پکیج افزونه تعبیه شده‌اند و هیچ ارتباط شبکه خارجی برقرار نمی‌گردد.
+
+---
+
+## 📜 مجوزها و حقوق مادی و معنوی (Credits & License)
+
+- **Vazirmatn, Shabnam, Sahel**: توسعه‌یافته توسط زنده‌یاد **صابر راستی‌کردار** تحت مجوز آزاد [OFL 1.1](https://scripts.sil.org/OFL).
+- **Estedad**: توسعه‌یافته توسط **امین عابدی** تحت مجوز آزاد [OFL 1.1](https://scripts.sil.org/OFL).
+- کد منبع افزونه تحت مجوز **[MIT License](LICENSE)** در دسترس عموم است.
