@@ -5,7 +5,7 @@
 ## Store Listing
 
 **Extension Name** [REQUIRED]
-Claude Farsi Fonts & RTL (Vazirmatn & Estedad)
+Farsi Fonts & RTL for Claude (Vazirmatn & Estedad)
 
 **Short Description** [REQUIRED]
 Use open Persian fonts (Vazirmatn, Estedad, Shabnam, Sahel) with automatic RTL alignment in Claude AI chatbot.

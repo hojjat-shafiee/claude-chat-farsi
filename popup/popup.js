@@ -114,32 +114,79 @@
 
   const btnReset = document.getElementById('btn-reset');
 
-  // Storage Helper
-  const storage = chrome.storage.sync || chrome.storage.local;
-
+  // --------------------------------------------------------------------------
+  // Storage Helpers with Sync/Local Fallback
+  // --------------------------------------------------------------------------
   async function loadSettings() {
     try {
-      const data = await storage.get('claudeFarsiSettings');
-      if (data && data.claudeFarsiSettings) {
-        settings = { ...DEFAULT_SETTINGS, ...data.claudeFarsiSettings };
+      if (chrome.storage?.sync) {
+        const data = await chrome.storage.sync.get('claudeFarsiSettings');
+        if (data?.claudeFarsiSettings) {
+          settings = { ...DEFAULT_SETTINGS, ...data.claudeFarsiSettings };
+          return;
+        }
       }
     } catch (e) {
-      console.warn('Could not read settings:', e);
+      console.debug('sync storage unavailable, trying local:', e);
+    }
+
+    try {
+      if (chrome.storage?.local) {
+        const data = await chrome.storage.local.get('claudeFarsiSettings');
+        if (data?.claudeFarsiSettings) {
+          settings = { ...DEFAULT_SETTINGS, ...data.claudeFarsiSettings };
+          return;
+        }
+      }
+    } catch (e) {
+      console.warn('Could not read settings from storage:', e);
     }
   }
 
   async function saveSettings() {
     try {
-      await storage.set({ claudeFarsiSettings: settings });
+      if (chrome.storage?.sync) {
+        await chrome.storage.sync.set({ claudeFarsiSettings: settings });
+        updatePreview();
+        return;
+      }
+    } catch (e) {
+      console.warn('sync storage set failed, trying local:', e);
+    }
+
+    try {
+      if (chrome.storage?.local) {
+        await chrome.storage.local.set({ claudeFarsiSettings: settings });
+      }
     } catch (e) {
       console.error('Could not save settings:', e);
     }
     updatePreview();
   }
 
+  // Debounced save to protect against storage write quotas during slider drags
+  let saveTimer = null;
+  function debouncedSave() {
+    updatePreview();
+    if (saveTimer) clearTimeout(saveTimer);
+    saveTimer = setTimeout(() => {
+      saveSettings();
+    }, 200);
+  }
+
+  function flushPendingSave() {
+    if (saveTimer) {
+      clearTimeout(saveTimer);
+      saveTimer = null;
+      saveSettings();
+    }
+  }
+
   function updateUiFromSettings() {
     toggleEnabled.checked = settings.enabled;
     mainControls.classList.toggle('disabled', !settings.enabled);
+
+    applyLanguage(settings.uiLang || 'fa');
 
     selectFont.value = settings.fontFamily;
     if (settings.fontFamily === 'custom') {
@@ -164,7 +211,6 @@
     checkApplyUi.checked = settings.applyToUI;
     checkPersianDigits.checked = settings.persianDigits;
 
-    applyLanguage(settings.uiLang || 'fa');
     updatePreview();
   }
 
@@ -217,8 +263,9 @@
 
   function updatePreview() {
     let fontName = settings.fontFamily;
-    if (fontName === 'custom' && settings.customFontName.trim()) {
-      fontName = `'${settings.customFontName.trim()}', 'Vazirmatn', sans-serif`;
+    const custom = (settings.customFontName || '').trim();
+    if (fontName === 'custom' && custom) {
+      fontName = `'${custom}', 'Vazirmatn', sans-serif`;
     } else if (fontName === 'default') {
       fontName = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
     } else {
@@ -250,6 +297,7 @@
     btnLangToggle.addEventListener('click', async () => {
       const nextLang = settings.uiLang === 'fa' ? 'en' : 'fa';
       applyLanguage(nextLang);
+      selectFont.value = settings.fontFamily;
       await saveSettings();
     });
 
@@ -264,22 +312,24 @@
       await saveSettings();
     });
 
-    inputCustomFont.addEventListener('input', async () => {
+    inputCustomFont.addEventListener('input', () => {
       settings.customFontName = inputCustomFont.value;
-      await saveSettings();
+      debouncedSave();
     });
 
-    rangeSize.addEventListener('input', async () => {
+    rangeSize.addEventListener('input', () => {
       settings.fontSize = Number(rangeSize.value);
       valSize.textContent = `${settings.fontSize}px`;
-      await saveSettings();
+      debouncedSave();
     });
+    rangeSize.addEventListener('change', flushPendingSave);
 
-    rangeHeight.addEventListener('input', async () => {
+    rangeHeight.addEventListener('input', () => {
       settings.lineHeight = Number(rangeHeight.value);
       valHeight.textContent = settings.lineHeight;
-      await saveSettings();
+      debouncedSave();
     });
+    rangeHeight.addEventListener('change', flushPendingSave);
 
     pillBtns.forEach(btn => {
       btn.addEventListener('click', async () => {
